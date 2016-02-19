@@ -26,5 +26,12 @@ namespace MVCHelloWorldTeam1.Controllers
 
             return View();
         }
+
+        public ActionResult Menu()
+        {
+            ViewBag.Message = "kkkkkk.";
+            return View();
+        }
+
     }
 }
