@@ -1,0 +1,35 @@
+﻿@using MVCHelloWorldTeam1.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+@model WarehouseAddProductModel
+
+<h2>Edit</h2>
+@using (Html.BeginForm("AddProduct", "Warehouse", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <thead>
+           <tr>
+               <th>Name</th>
+               <th>Category</th>
+               <th>Price</th>
+               <th>Quantity</th>
+               <th>Code</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> @Html.TextBoxFor(m => m.Name, new { }) </td>
+                <td> @Html.DropDownListFor(m => m.CategoryId, Model.Categories) </td>
+                <td> @Html.TextBoxFor(m => m.Price, new {  }) </td>
+                <td> @Html.TextBoxFor(m => m.Quantity, new {  }) </td>
+                <td> @Html.TextBoxFor(m => m.Code, new {  }) </td>
+                <td> <input type="submit" value="Add" /> </td>
+                <td> <input type="reset" value="Clear" /> </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
