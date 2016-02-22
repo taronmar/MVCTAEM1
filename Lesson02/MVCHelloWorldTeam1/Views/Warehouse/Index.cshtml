@@ -5,10 +5,13 @@
 }
 @model WarehouseAddProductModel
 
+<link rel="stylesheet" type="text/css" href="~/Content/MyStyle.css"/>
+
 <h2>Edit</h2>
-@using (Html.BeginForm("AddProduct", "Warehouse", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+@using (Html.BeginForm("Index", "Warehouse", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
 {
     @Html.AntiForgeryToken()
+
     <table>
         <thead>
            <tr>
@@ -17,19 +20,37 @@
                <th>Price</th>
                <th>Quantity</th>
                <th>Code</th>
+               <th colspan="2">Action Buttons</th>
            </tr>
         </thead>
         <tbody>
             <tr>
-                <td> @Html.TextBoxFor(m => m.Name, new { }) </td>
-                <td> @Html.DropDownListFor(m => m.CategoryId, Model.Categories) </td>
-                <td> @Html.TextBoxFor(m => m.Price, new {  }) </td>
-                <td> @Html.TextBoxFor(m => m.Quantity, new {  }) </td>
-                <td> @Html.TextBoxFor(m => m.Code, new {  }) </td>
-                <td> <input type="submit" value="Add" /> </td>
-                <td> <input type="reset" value="Clear" /> </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name, new { })<br/>        
+                </td>
+                    
+                
+                <td> 
+                    @Html.DropDownListFor(m => m.CategoryId, Model.Categories)<br />
+                </td>
+                
+                <td> 
+                    @Html.TextBoxFor(m => m.Price, new { })<br />
+                </td> 
+                <td> 
+                    @Html.TextBoxFor(m => m.Quantity, new { })<br />
+                </td>
+                <td>
+                     @Html.TextBoxFor(m => m.Code, new {  })<br/>
+                </td>
+                <td> <input class="button-dd-clear" type="submit" value="Add" /> </td>           
+                <td> <input class="button-dd-clear" type="reset" value="Clear" /> </td>           
             </tr>
         </tbody>
-    </table>
+    </table><br />
+    @Html.ValidationSummary("", new { @class = "text-error" })
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
 

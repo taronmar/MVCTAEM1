@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -27,10 +28,20 @@ namespace MVCHelloWorldTeam1.Models
                 new Category {Id = 1, Name = "Chocolate"}
             };
 
-        public string Name { get; set; }
-        public Int32 CategoryId { get; set; }
-        public Decimal Price { get; set; }
-        public Decimal Quantity { get; set; }
-        public Int32 Code { get; set; }
+        [Required]
+        //[Display(Name = "Name")]
+        public String Name { get; set; }
+
+        [Required]
+        public Int32? CategoryId { get; set; }
+
+        [Required]
+        public Decimal? Price { get; set; }
+
+        [Required]
+        public Decimal? Quantity { get; set; }
+
+        [Required]
+        public Int32? Code { get; set; }
     }
 }

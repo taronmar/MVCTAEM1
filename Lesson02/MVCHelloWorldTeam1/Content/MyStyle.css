@@ -1,0 +1,25 @@
+﻿body {
+   
+}
+table {
+    width:100%;
+    border: 10px;
+    border: 2px solid black;
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+    background-color: lightblue;
+}
+th{
+    text-align:left;
+    font-size: larger;
+    font-style: italic;    
+}
+
+.text-error{
+    color: red;
+}
+.button-dd-clear{
+    width: 100px;
+    background-color: yellow;
+
+}
