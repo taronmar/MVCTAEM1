@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVCHelloWorldTeam1.Controllers
+namespace ProductMeneger.Controllers
 {
     public class HomeController : Controller
     {
@@ -26,12 +26,5 @@ namespace MVCHelloWorldTeam1.Controllers
 
             return View();
         }
-
-        public ActionResult Menu()
-        {
-        
-            return View();
-        }
-
     }
 }
